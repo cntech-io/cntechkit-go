@@ -17,7 +17,7 @@ func NewLogger(config *LoggerConfig) *logger {
 	logrusLogger := logrus.New()
 	env := NewServerEnv()
 	if env.DebugModeFlag {
-		logrusLogger.SetLevel(logrus.DebugLevel)
+		logrusLogger.SetLevel(logrus.InfoLevel)
 	} else {
 		logrusLogger.SetLevel(logrus.WarnLevel)
 	}
