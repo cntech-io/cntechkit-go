@@ -1,7 +1,7 @@
 package logger
 
 import (
-	"github.com/cntech-io/cntechkit-go/env"
+	"github.com/cntech-io/cntechkit-go/v2/env"
 	"github.com/sirupsen/logrus"
 )
 
