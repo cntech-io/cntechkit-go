@@ -1,4 +1,4 @@
-module github.com/cntech-io/cntechkit-go
+module github.com/cntech-io/cntechkit-go/v2
 
 go 1.20
 

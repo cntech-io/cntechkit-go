@@ -1,4 +1,4 @@
-package utils
+package env
 
 import (
 	"fmt"
@@ -7,7 +7,7 @@ import (
 	"strings"
 )
 
-func GetBooleanEnv(key string, panicFlag bool) bool {
+func GetBoolean(key string, panicFlag bool) bool {
 	result, ok := os.LookupEnv(key)
 	if panicFlag && !ok {
 		panic(fmt.Sprintf("%v not found.", key))
@@ -24,7 +24,7 @@ func GetBooleanEnv(key string, panicFlag bool) bool {
 	return value
 }
 
-func GetNumberEnv(key string, panicFlag bool) int {
+func GetNumber(key string, panicFlag bool) int {
 	result, ok := os.LookupEnv(key)
 	if panicFlag && !ok {
 		panic(fmt.Sprintf("%v not found.", key))
@@ -41,7 +41,7 @@ func GetNumberEnv(key string, panicFlag bool) int {
 	return int(value)
 }
 
-func GetStringEnv(key string, panicFlag bool) string {
+func GetString(key string, panicFlag bool) string {
 	result, ok := os.LookupEnv(key)
 	if panicFlag && !ok {
 		panic(fmt.Sprintf("%v not found.", key))
@@ -54,7 +54,7 @@ func GetStringEnv(key string, panicFlag bool) string {
 	return result
 }
 
-func GetStringArrayEnv(key string, seperator string, panicFlag bool) []string {
+func GetStringArray(key string, seperator string, panicFlag bool) []string {
 	result, ok := os.LookupEnv(key)
 	if panicFlag && !ok {
 		panic(fmt.Sprintf("%v not found.", key))

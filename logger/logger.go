@@ -1,6 +1,7 @@
-package cntechkitgo
+package logger
 
 import (
+	"github.com/cntech-io/cntechkit-go/env"
 	"github.com/sirupsen/logrus"
 )
 
@@ -15,7 +16,7 @@ type LoggerConfig struct {
 
 func NewLogger(config *LoggerConfig) *logger {
 	logrusLogger := logrus.New()
-	env := NewServerEnv()
+	env := env.NewServerEnv()
 	if env.DebugModeFlag {
 		logrusLogger.SetLevel(logrus.InfoLevel)
 	} else {

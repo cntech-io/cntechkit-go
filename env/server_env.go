@@ -1,9 +1,8 @@
-package cntechkitgo
+package env
 
 import (
 	"fmt"
 
-	"github.com/cntech-io/cntechkit-go/utils"
 	"github.com/joho/godotenv"
 )
 
@@ -26,8 +25,8 @@ func NewServerEnv() *ServerEnv {
 		fmt.Println(".env file not found")
 	}
 	return &ServerEnv{
-		DebugModeFlag:  utils.GetBooleanEnv(string(DEBUG_MODE_FLAG), false),
-		AppPort:        utils.GetStringEnv(string(APP_PORT), false),
-		TrustedProxies: utils.GetStringArrayEnv(string(TRUSTED_PROXIES), ",", false),
+		DebugModeFlag:  GetBoolean(string(DEBUG_MODE_FLAG), false),
+		AppPort:        GetString(string(APP_PORT), false),
+		TrustedProxies: GetStringArray(string(TRUSTED_PROXIES), ",", false),
 	}
 }
